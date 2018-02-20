@@ -10,7 +10,7 @@ public class SwaggerdemoApplication {
 		SpringApplication.run(SwaggerdemoApplication.class, args);
 	}
 
-	
+		
 	
 
 }

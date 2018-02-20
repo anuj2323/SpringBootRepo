@@ -1,7 +1,8 @@
 package org.anuj.swagger.Swaggerdemo;
 
-public class Product {
+import org.hibernate.validator.constraints.NotEmpty;
 
+public class Product {
 	private String name;
 	private int id;
 	public String getName() {

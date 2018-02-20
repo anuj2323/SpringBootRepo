@@ -2,15 +2,18 @@ package org.anuj.swagger.Swaggerdemo.repo;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
+import org.anuj.Swaggerdemo.RestTemplate.InvokeWebService;
 import org.anuj.swagger.Swaggerdemo.Product;
 import org.springframework.stereotype.Repository;
 
 @Repository
 public class RepoDemo {
+
 	ArrayList<Product> al = new ArrayList<Product>();
 
-	public List<Product> getItems() {
+	public List<Product> invokedao() {
 		return al;
 	}
 
@@ -20,11 +23,7 @@ public class RepoDemo {
 
 	public void delete(Product p) {
 		String check = p.getName();
-		/*for (Product p1 : al) {
-			if (p1.getName() == check) {
-				al.remove(p1);
-			}
-		}*/
-		al.stream().filter((a)-> a.getName().equals(check)).forEach((a)-> al.remove(a));
+		al = (ArrayList<Product>) al.stream().filter((a) -> !a.getName().equals(check)).collect(Collectors.toList());
+		al.forEach((a) -> System.out.println(a));
 	}
 }

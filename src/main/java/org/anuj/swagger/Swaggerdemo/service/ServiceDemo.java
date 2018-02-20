@@ -1,4 +1,5 @@
 package org.anuj.swagger.Swaggerdemo.service;
+
 import java.util.List;
 
 import org.anuj.swagger.Swaggerdemo.Product;
@@ -9,14 +10,18 @@ import org.springframework.stereotype.Service;
 @Service
 public class ServiceDemo {
 
-@Autowired	
-RepoDemo rd;
+	@Autowired
+	RepoDemo rd;
 
- public List<Product> invokedao(){
-	return rd.getItems();
-}
+	public List<Product> invokedao() {
+		return rd.invokedao();
+	}
 
- public void additem(Product p){
-	 rd.add(p);
- }
+	public void additem(Product p) {
+		rd.add(p);
+	}
+
+	public void deleteitem(Product p) {
+		rd.delete(p);
+	}
 }
